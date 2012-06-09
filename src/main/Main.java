@@ -23,40 +23,14 @@ public class Main extends MIDlet {
     return self;
   }
 
-  public void startApp() {
-    new Thread() {
-      public void run() {
-        
-        long start = System.currentTimeMillis();
-        
-        // Инициализация
-        init();
-
-        // Рассчитываем время, оставшееся до SPLASH_TIME
-        long sleep = SPLASH_TIME - (System.currentTimeMillis() - start);
-        if (sleep < 0) {
-          sleep = 0;
-        }
-        
-        // Сон
-        try {
-          sleep(sleep);
-        } catch (InterruptedException ex) { }
-        
-        // Показываем меню
-        showKineticScroll();
-        
-        try {
-          join();
-        } catch (InterruptedException e) {}
-      }
-    }.start();
-  }
-
   private void init() {
     try {
       KineticScroll = new KineticScroll();
     } catch (Exception ex) { ex.printStackTrace(); }
+  }
+
+  public void startApp() {
+    showKineticScroll();
   }
   
   public void pauseApp() { }

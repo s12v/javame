@@ -5,6 +5,7 @@ import javax.microedition.lcdui.Display;
 import javax.microedition.midlet.MIDlet;
 import views.KineticScroll;
 
+// test
 public class Main extends MIDlet {
   
   private Display display;

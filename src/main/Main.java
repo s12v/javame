@@ -5,8 +5,9 @@ import javax.microedition.lcdui.Display;
 import javax.microedition.midlet.MIDlet;
 import views.KineticScroll;
 
-// test
 public class Main extends MIDlet {
+  
+  private static final long SPLASH_TIME = 500;
   
   private Display display;
   private static Main self;
@@ -16,7 +17,6 @@ public class Main extends MIDlet {
   public Main () {
     self = this;
     display = Display.getDisplay(this);
-    init();
   }
   
   public static Main getInstance() {
